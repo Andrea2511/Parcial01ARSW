@@ -49,11 +49,13 @@ public class HostBlackListsValidator {
         }
 
         for(Busqueda b : busquedas) {
-            System.out.println(b.getBlackListOcurrences().toString());
+
             try {
                 b.join();
-                System.out.println(b.getBlackListOcurrences().toString());
-                //blackListOcurrences.add(b.getBlackListOcurrences());
+                System.out.println("Ocurrencias en " + b.getInitValue() + " hasta " + (b.getInitValue()+b.getN()-1) + ": " + b.getBlackListOcurrences().toString());
+                blackListOcurrences.addAll(b.getBlackListOcurrences());
+
+
                 LOG.log(Level.INFO, "Checked Black Lists:{0} of {1}", new Object[]{b.getCheckedListsCount(), skds.getRegisteredServersCount()});
             }
             catch (InterruptedException e){

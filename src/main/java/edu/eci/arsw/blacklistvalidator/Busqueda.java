@@ -67,4 +67,12 @@ public class Busqueda extends Thread {
     public int getCheckedListsCount() {
         return checkedListsCount;
     }
+
+    public int getInitValue() {
+        return initValue;
+    }
+
+    public int getN() {
+        return n;
+    }
 }
